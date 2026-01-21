@@ -1,0 +1,52 @@
+/* Center the main title */
+h1 {
+    text-align: center;
+}
+
+/* Side-by-side divs container */
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Left and right div styling */
+.left, .right {
+    width: 45%;
+}
+
+/* h3 styling */
+h3 {
+    font-weight: 500;
+}
+
+/* Lists styling */
+ol {
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style-position: inside;
+    font-weight: 300;
+}
+
+ul {
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style-type: upper-roman;
+    list-style-position: inside;
+    font-weight: 300;
+}
+
+/* Links hover effect */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Bottom div styling */
+.bottom {
+    width: 100%;
+    margin-top: 60%;
+    float: right;
+    margin-bottom: 20px;
+}
