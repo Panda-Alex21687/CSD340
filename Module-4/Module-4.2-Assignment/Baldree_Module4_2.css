@@ -29,3 +29,21 @@ figcaption {
     font-size: 0.75em;
     color: rgba(128, 0, 128, 0.8);
 }
+
+#image-gallery {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 2px solid orange;
+}
+
+#image-gallery > div {
+    border: 1px solid orange;
+    padding: 20px;
+}
+
+.bottom-right {
+    text-align: right;
+    margin-top: 40px;
+}
