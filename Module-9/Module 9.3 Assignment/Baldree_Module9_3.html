@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSD 340 Web Development with HTML and CSS</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .story {
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+    }
+
+    .blank {
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      padding: 0 0.25rem;
+      border-bottom: 2px solid #333;
+      display: inline-block;
+      min-width: 140px;
+      text-align: center;
+    }
+
+    .buttons {
+      margin-top: 1rem;
+    }
+
+    button {
+      margin: 0.25rem 0.4rem 0.25rem 0;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+    }
+
+    /* Back to Landing Page Button */
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #1abc9c;
+      color: black;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Assignment 9.3: JavaScript - Part 1</h1>
+
+  <div class="story">
+    <p>
+      Most of my best ideas show up when I’m not even trying to force them. I’ll be working on homework,
+      building a page, or tweaking a layout, and then it clicks; like a small light turning on at the right time.
+      I’ve learned that consistency matters more than perfection, especially when I’m balancing multiple classes.
+    </p>
+
+    <p>
+      When I sit down to design, I usually start with a simple plan: pick a color palette, choose readable fonts,
+      and build structure first. Once the foundation is solid, adding the details feels more natural. It’s kind of
+      like building a setup for a game; if the basics aren’t stable, everything else feels off.
+    </p>
+
+    <p>
+      Tonight’s goal is simple: stay <span id="word1" class="blank">__________</span>, keep my focus
+      <span id="word2" class="blank">__________</span>, and finish strong with a
+      <span id="word3" class="blank">__________</span> attitude—because future me will be
+      <span id="word4" class="blank">__________</span> that I did.
+    </p>
+
+    <div class="buttons">
+      <button type="button" onclick="fillWord1()">Reveal Word 1</button>
+      <button type="button" onclick="fillWord2()">Reveal Word 2</button>
+      <button type="button" onclick="fillWord3()">Reveal Word 3</button>
+      <button type="button" onclick="fillWord4()">Reveal Word 4</button>
+    </div>
+  </div>
+
+  <!-- Back to Landing Page -->
+  <a href="../../index.html" class="back-button">Back to Landing Page</a>
+
+  <script>
+    // Four variables holding the string values that will replace the blanks
+    const wordOne = "disciplined";
+    const wordTwo = "locked-in";
+    const wordThree = "calm";
+    const wordFour = "grateful";
+
+    // Four functions (one per button) to replace the underscores
+    function fillWord1() {
+      document.getElementById("word1").textContent = wordOne;
+    }
+
+    function fillWord2() {
+      document.getElementById("word2").textContent = wordTwo;
+    }
+
+    function fillWord3() {
+      document.getElementById("word3").textContent = wordThree;
+    }
+
+    function fillWord4() {
+      document.getElementById("word4").textContent = wordFour;
+    }
+  </script>
+</body>
+</html>
