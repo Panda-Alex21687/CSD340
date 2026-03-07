@@ -12,7 +12,7 @@
 
 <script>
 
-function pickImage(label, baseName) {
+function pickImage(label, baseName){
 
 let mood = document.getElementById("moodSelect").value;
 
@@ -23,7 +23,7 @@ let messages = {
 
 Chill: "Low stress, good vibes. Take it easy and enjoy the moment.",
 
-Hype: "Turn it up! This is the high-energy choice.",
+Hyped: "Turn it up! This is the high-energy choice.",
 
 Focused: "Locked in. No distractions—just results.",
 
@@ -39,10 +39,45 @@ let img = document.getElementById("resultImg");
 let imagePath = "Images/" + baseName + "-" + mood + ".png";
 
 img.src = imagePath;
-
 img.alt = label;
-
 img.style.display = "block";
+
+updateBackground(mood);
+
+}
+
+function updateBackground(mood){
+
+document.body.classList.remove(
+"chill-bg",
+"hyped-bg",
+"focused-bg",
+"funny-bg"
+);
+
+if(mood === "Chill"){
+document.body.classList.add("chill-bg");
+}
+
+if(mood === "Hyped"){
+document.body.classList.add("hyped-bg");
+}
+
+if(mood === "Focused"){
+document.body.classList.add("focused-bg");
+}
+
+if(mood === "Funny"){
+document.body.classList.add("funny-bg");
+}
+
+}
+
+function moodChanged(){
+
+let mood = document.getElementById("moodSelect").value;
+
+updateBackground(mood);
 
 }
 
@@ -60,18 +95,13 @@ Click an image to update the display.
 
 <div class="controls">
 
-<label for="moodSelect">
-<strong>Choose a mood:</strong>
-</label>
+<label for="moodSelect"><strong>Choose a mood:</strong></label>
 
-<select id="moodSelect">
+<select id="moodSelect" onchange="moodChanged()">
 
 <option value="Chill">Chill</option>
-
 <option value="Hyped">Hyped</option>
-
 <option value="Focused">Focused</option>
-
 <option value="Funny">Funny</option>
 
 </select>
