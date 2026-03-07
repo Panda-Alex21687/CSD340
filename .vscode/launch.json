@@ -4,7 +4,7 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Debug Current File",
+      "name": "Debug Current HTML File",
       "file": "${file}",
       "webRoot": "${workspaceFolder}"
     }
