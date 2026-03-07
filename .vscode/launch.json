@@ -4,8 +4,9 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Open Module 10.3",
-      "file": "${workspaceFolder}/Module-10/Module-10-3/Baldree_Mod10_3.html"
+      "name": "Debug Current File",
+      "file": "${file}",
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }
