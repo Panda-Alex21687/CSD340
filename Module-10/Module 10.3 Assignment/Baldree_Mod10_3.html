@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CSD 340 Web Development with HTML and CSS</title>
+
+<link rel="stylesheet" href="Baldree_Mod10_3.css">
+
+<script>
+
+function pickImage(label, baseName) {
+
+let mood = document.getElementById("moodSelect").value;
+
+document.getElementById("resultTitle").textContent =
+label + " (" + mood + ")";
+
+let messages = {
+
+Chill: "Low stress, good vibes. Take it easy and enjoy the moment.",
+
+Hype: "Turn it up! This is the high-energy choice.",
+
+Focused: "Locked in. No distractions—just results.",
+
+Funny: "Okay, this one has chaotic energy in the best way."
+
+};
+
+document.getElementById("resultText").textContent =
+"You chose: " + label + ". Mood setting: " + mood + ". " + messages[mood];
+
+let img = document.getElementById("resultImg");
+
+let imagePath = "Images/" + baseName + "-" + mood + ".png";
+
+img.src = imagePath;
+
+img.alt = label;
+
+img.style.display = "block";
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Assignment 10.3: JavaScript - Part 2</h1>
+
+<p class="subtitle">
+Click an image to update the display.
+</p>
+
+<div class="controls">
+
+<label for="moodSelect">
+<strong>Choose a mood:</strong>
+</label>
+
+<select id="moodSelect">
+
+<option value="Chill">Chill</option>
+
+<option value="Hyped">Hyped</option>
+
+<option value="Focused">Focused</option>
+
+<option value="Funny">Funny</option>
+
+</select>
+
+</div>
+
+
+<section class="grid">
+
+<figure onclick="pickImage('Coffee Break','Coffee')">
+
+<img src="Images/Coffee-Chill.png" alt="Coffee">
+
+<figcaption>Coffee</figcaption>
+
+</figure>
+
+
+<figure onclick="pickImage('Gaming Time','Controller')">
+
+<img src="Images/Controller-Chill.png" alt="Controller">
+
+<figcaption>Controller</figcaption>
+
+</figure>
+
+
+<figure onclick="pickImage('Music Mode','Headphones')">
+
+<img src="Images/Headphones-Chill.png" alt="Headphones">
+
+<figcaption>Headphones</figcaption>
+
+</figure>
+
+
+<figure onclick="pickImage('Cat Energy','Cat')">
+
+<img src="Images/Cat-Chill.png" alt="Cat">
+
+<figcaption>Cat</figcaption>
+
+</figure>
+
+</section>
+
+
+<div id="resultCard">
+
+<h2 id="resultTitle">
+Your selection will appear here
+</h2>
+
+<p id="resultText">
+Pick a mood and click an image.
+</p>
+
+<img id="resultImg" src="" alt="">
+
+</div>
+
+
+<a href="../../index.html" class="back-button">
+Back to Landing Page
+</a>
+
+</body>
+
+</html>
