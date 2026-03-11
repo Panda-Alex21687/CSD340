@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <link rel="stylesheet" href="Baldree_Mod11_2.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+    <p>
+      Enter a task in the text box, then click <strong>Add</strong> to place it in your
+      To Do List. Use <strong>Sort</strong> to arrange the list in alphabetical order,
+      and use <strong>Delete Last Entry</strong> to remove the most recently added item.
+    </p>
+
+    <div class="input-section">
+      <input type="text" id="todoInput" placeholder="Enter a to-do item..." />
+      <button class="add-btn" onclick="addItem()">Add</button>
+      <button class="delete-btn" onclick="deleteLastItem()">Delete Last Entry</button>
+      <button class="sort-btn" onclick="sortItems()">Sort</button>
+    </div>
+
+    <div class="list-display" id="displayArea">
+      <h2>Things To Do:</h2>
+      <p>No items in the list yet.</p>
+    </div>
+
+    <a class="back-link" href="../index.html">Back to Landing Page</a>
+  </div>
+
+  <script>
+    let todoList = [];
+
+    function displayItems() {
+      let displayArea = document.getElementById("displayArea");
+
+      if (todoList.length === 0) {
+        displayArea.innerHTML = `
+          <h2>Things To Do:</h2>
+          <p>No items in the list yet.</p>
+        `;
+        return;
+      }
+
+      let output = "<h2>Things To Do:</h2>";
+      for (let i = 0; i < todoList.length; i++) {
+        output += "<p>" + (i + 1) + ". " + todoList[i] + "</p>";
+      }
+
+      displayArea.innerHTML = output;
+    }
+
+    function addItem() {
+      let input = document.getElementById("todoInput");
+      let item = input.value.trim();
+
+      if (item === "") {
+        alert("Please enter a to-do item before clicking Add.");
+        return;
+      }
+
+      todoList.push(item);
+      alert('Added: "' + item + '"');
+      input.value = "";
+      displayItems();
+    }
+
+    function deleteLastItem() {
+      if (todoList.length === 0) {
+        alert("There are no items to delete.");
+        return;
+      }
+
+      let deletedItem = todoList.pop();
+      alert('Deleted: "' + deletedItem + '"');
+      displayItems();
+    }
+
+    function sortItems() {
+      if (todoList.length === 0) {
+        alert("There are no items to sort.");
+        return;
+      }
+
+      todoList.sort();
+      alert("The to-do list has been sorted.");
+      displayItems();
+    }
+  </script>
+</body>
+</html>
